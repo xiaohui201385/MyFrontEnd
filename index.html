@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="cxh">
+<!DOCTYPE HTML>
+<html>
 
 	<head>
 		<meta charset="utf-8" />
@@ -8,14 +8,18 @@
 		<link href="zui1.7.0/css/zui.min.css" rel="stylesheet">
 		<link href="zui1.7.0/css/zui-theme.css" />
 
-		<script type="text/javascript" src="js/jquery/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery-3.2.0.min.js"></script>
+		<!--<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>-->
 		<script src="zui1.7.0/js/zui.min.js"></script>
 		<script src="js/myjs.js"></script>
+		<!--<script src="js/jstree.js"></script>
+		<script src="js/jstree.min.js"></script>-->
+		<!--<script src="js/bootstrap-treeview.js"></script>-->
 	</head>
 
 	<body>
 		<div class="container">
+			<!--最顶部-->
 			<div class="top-my">
 				<img src="images/logo.jpg" height="100" width="150" />
 				<form class="navbar-form navbar-right ">
@@ -27,22 +31,23 @@
 					</div>
 				</form>
 			</div>
-			<div>
-				<ul class="nav nav-primary nav-justified">
+			<!--导航栏-->
+			<div style="margin-bottom:10px;">
+				<ul id="daohanglan" class="nav nav-primary nav-justified">
 					<li class="active">
 						<a href="#">首页</a>
 					</li>
 					<li>
+						<a href="#">项目 </a>
+					</li>
+					<li>
+						<a href="#">招聘信息 </a>
+					</li>
+					<li>
+						<a href="#">科研队伍 </a>
+					</li>
+					<li>
 						<a href="#">动态 <span class="label label-badge label-success">4</span></a>
-					</li>
-					<li>
-						<a href="#">项目 </a>
-					</li>
-					<li>
-						<a href="#">项目 </a>
-					</li>
-					<li>
-						<a href="#">项目 </a>
 					</li>
 					<li>
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">更多 <span class="caret"></span></a>
@@ -63,8 +68,47 @@
 					</li>
 				</ul>
 			</div>
+			<!--图片轮播-->
+			<div id="myNiceCarousel" class="carousel slide" data-ride="carousel" data-interval=3000 style="margin-bottom:10px;">
+				<!-- 圆点指示器 -->
+				<ol class="carousel-indicators">
+					<li data-target="#myNiceCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myNiceCarousel" data-slide-to="1"></li>
+					<li data-target="#myNiceCarousel" data-slide-to="2"></li>
+				</ol>
+				<!-- 轮播项目 -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img alt="First slide" src="images/lunbo1.jpg">
+						<div class="carousel-caption">
+
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Second slide" src="images/lunbo2.jpg">
+						<div class="carousel-caption">
+
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Third slide" src="images/lunbo3.jpg">
+						<div class="carousel-caption">
+
+						</div>
+					</div>
+				</div>
+
+				<!-- 项目切换按钮 -->
+				<a class="left carousel-control" href="#myNiceCarousel" data-slide="prev">
+					<span class="icon icon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#myNiceCarousel" data-slide="next">
+					<span class="icon icon-chevron-right"></span>
+				</a>
+			</div>
 			<div id="content" class="row-fluid">
-				<div class="col-md-3">
+				<!--树形菜单-->
+				<div class="col-md-2">
 					<nav class="menu" data-ride="menu" style="width: 200px">
 						<ul id="treeMenu" class="tree tree-menu" data-ride="tree">
 							<li>
@@ -108,9 +152,38 @@
 							</li>
 						</ul>
 					</nav>
+					<nav class="menu" data-ride="menu" style="width: 200px">
+						<ul class="tree tree-menu" id="myTree"></ul>
+					</nav>
 				</div>
-				<div class="col-md-9">
-					<h2 style="text-align: center;">Main Content Section</h2>
+				<!--内容显示-->
+				<div class="col-md-10" style="height: 420px;">
+
+					<div class="contentModular">
+						<button class="btn btn-block " style="margin-bottom:2px;" type="button">新闻动态<i class="icon icon-chevron-right" style="float:right "></i></button>
+						<img src="images/conten1.jpg" style="background-size:100% 100%;" />
+						<div class="scroll-box">
+							<ul>
+								<li>1好消息！好消息！本店所有商品全部白送1</li>
+								<li>2好消息！好消息！本店所有商品全部白送2</li>
+								<li>3好消息！好消息！本店所有商品全部白送3</li>
+								<li>4好消息！好消息！本店所有商品全部白送4</li>
+								<li>5好消息！好消息！本店所有商品全部白送5</li>
+								<li>6好消息！好消息！本店所有商品全部白送6</li>
+								<li>7好消息！好消息！本店所有商品全部白送7</li>
+								<li>8好消息！好消息！本店所有商品全部白送8</li>
+							</ul>
+						</div>
+					</div>
+					<div class="contentModular">
+						<button class="btn btn-block " type="button">视频播放<i class="icon icon-chevron-right" style="float:right "></i></button>
+						<video src="void/0803.mp4" controls="controls"></video>
+					</div>
+					<div class="contentModular">
+						<button class="btn btn-block " type="button">音乐播放<i class="icon icon-chevron-right" style="float:right "></i></button>
+						<img src="images/audiobackground.jpg" />
+						<audio src="mp3/testmp3.mp3" controls="controls"></audio>
+					</div>
 				</div>
 			</div>
 		</div>
